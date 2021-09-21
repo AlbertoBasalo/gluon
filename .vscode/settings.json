@@ -1,12 +1,24 @@
 {
-    "go.lintOnSave": "file",
-    "go.formatTool": "goimports",
+    "go.inferGopath": false,
+    "go.buildOnSave": "workspace",
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
+    "go.buildTags": "",
+    "go.buildFlags": [],
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    "go.formatTool": "gofmt",
+    "go.gocodeAutoBuild": false,
     "go.useLanguageServer": true,
+    "go.alternateTools": {
+        "go-langserver": "gopls",
+    },
+    "go.languageServerExperimentalFeatures": {},
     "[go]": {
-        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        }
+        },
     },
-    "go.docsTool": "gogetdoc"
 }
