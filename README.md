@@ -1,12 +1,9 @@
 # gluon
+
 ## Go language laboratory
 
-```
+A step by step diary of my learning progress
 
-go test
+## Created by Alberto Basalo
 
-go run gluon.go
-
-go build
-
-```
+[@albertobasalo](https://twitter.com/albertobasalo)
