@@ -11,8 +11,8 @@ func main() {
 }
 
 /*
-	GetStartLine returns the starting line of the program
-	needs input and output types to be declared
+   Function that returns a formated string
+   needs input and output types to be declared
 */
 func GetStartLine(program string) string {
 	return "🚀 " + program + " started"
