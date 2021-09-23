@@ -21,7 +21,7 @@ code .
 
 ### Show me the code
 
-On `gluon.go` file
+On `gluon.go` file (View code)[https://github.com/AtomicBuilders/gluon/blob/main/gluon.go]
 
 ```go
 package main // name of this package
@@ -57,7 +57,7 @@ gluon.exe # you can run it anyware
 
 ### Tests have their files *_test.go
 
-On `gluon_test.go` file
+On `gluon_test.go` file (view code)[https://github.com/AtomicBuilders/gluon/blob/main/gluon_test.go]
 
 ```go
 package main // name of this package
@@ -81,8 +81,31 @@ func GetStartLine(program string) string {
 }
 ```
 
+The language itself does not help a lot. So you need an utility file. `test-tools.go` [View code](https://github.com/AtomicBuilders/gluon/blob/main/test-tools.go)
+
+```go
+package main
+
+import "testing"
+
+/*
+ Utility function to check if the two values are equal
+ Sends an erro if not, makeing the test fail
+*/
+func AssertEqual(t testing.TB, actual, expected string) {
+	t.Helper() // marks this funcion as a helper to skip it from the stack trace
+	if actual != expected {
+		// %q format with quoted strings
+		t.Errorf("❌ Actual: %q expected: %q", actual, expected)
+	}
+}
+
+```
+
 ### Run tests
 
 ```bash
 go run test # builds and runs on memory
 ```
+
+### [Back to index](https://github.com/AtomicBuilders/gluon/blob/main/docs/0-hello-world.md)
