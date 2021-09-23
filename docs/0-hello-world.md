@@ -53,3 +53,36 @@ go build gluon.go # generates an executable
 gluon.exe # you can run it anyware
 ```
 
+## 0.3 Testing
+
+### Tests have their files *_test.go
+
+On `gluon_test.go` file
+
+```go
+package main // name of this package
+
+import "fmt" // importing external packages
+
+var program string // declare a variable with type string
+
+func main() {
+	program = "gluon"             // assign a value to the variable
+	line := GetStartLine(program) // initialize and assing a value
+	fmt.Println(line)             // print the value of the variable
+}
+
+/*
+	GetStartLine returns the starting line of the program
+	needs input and output types to be declared
+*/
+func GetStartLine(program string) string {
+	return "🚀 " + program + " started"
+}
+```
+
+### Run tests
+
+```bash
+go run test # builds and runs on memory
+```
