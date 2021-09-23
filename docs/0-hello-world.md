@@ -21,7 +21,7 @@ code .
 
 ### Show me the code
 
-On `gluon.go` file (View code)[https://github.com/AtomicBuilders/gluon/blob/main/gluon.go]
+On `gluon.go` file [View code](https://github.com/AtomicBuilders/gluon/blob/main/gluon.go)
 
 ```go
 package main // name of this package
@@ -57,7 +57,7 @@ gluon.exe # you can run it anyware
 
 ### Tests have their files *_test.go
 
-On `gluon_test.go` file (view code)[https://github.com/AtomicBuilders/gluon/blob/main/gluon_test.go]
+On `gluon_test.go` file [view code](https://github.com/AtomicBuilders/gluon/blob/main/gluon_test.go)
 
 ```go
 package main // name of this package
