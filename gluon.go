@@ -8,6 +8,8 @@ func main() {
 	program = "gluon"             // assign a value to the variable
 	line := GetStartLine(program) // initialize and assing a value
 	fmt.Println(line)             // print the value of the variable
+
+	InitializeWallet()
 }
 
 /*
