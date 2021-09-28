@@ -11,17 +11,17 @@ func InitializeWallet() {
 	fmt.Println("Holder: " + walletHolder)
 	var walletBalance int = 0
 	fmt.Println("Balance:", walletBalance)
-	numberOfTransactions := 0
+	var numberOfTransactions uint = 0
 	fmt.Println("Number of Transactions:", numberOfTransactions)
 	const minimumTransactionAmount float32 = 0.01
 	fmt.Println("Minimum Transaction Amount:", minimumTransactionAmount)
 	var isActive bool = true
 	fmt.Println("Is Active:", isActive)
 	var creationDate time.Time = time.Now()
-	const longTimeLayout = "2006-01-02 15:04:05"
+	const longTimeLayout string = "2006-01-02 15:04:05"
 	fmt.Println("Creation Date:", creationDate.Format(longTimeLayout))
-	const oneYear = time.Hour * 24 * 365
+	const oneYear time.Duration = time.Hour * 24 * 365
 	var expirationDate time.Time = creationDate.Add(oneYear * 2)
-	const shortTimeLayout = "2006-01-02"
+	const shortTimeLayout string = "2006-01-02"
 	fmt.Println("Expiration Date:", expirationDate.Format(shortTimeLayout))
 }
