@@ -11,6 +11,15 @@ func InitializeWallet() {
 	fmt.Println("Holder: " + walletHolder)
 	var walletBalance int = 0
 	fmt.Println("Balance:", walletBalance)
+	type CurrencyType string
+	const (
+		BitCoin CurrencyType = "BitCoin"
+		Ether   CurrencyType = "Ether"
+		USD     CurrencyType = "USD"
+		Euro    CurrencyType = "Euro"
+	)
+	var walletCurrency CurrencyType = Ether
+	fmt.Println("Currency:", walletCurrency)
 	var numberOfTransactions uint = 0
 	fmt.Println("Number of Transactions:", numberOfTransactions)
 	const minimumTransactionAmount float32 = 0.01
@@ -24,4 +33,24 @@ func InitializeWallet() {
 	var expirationDate time.Time = creationDate.Add(oneYear * 2)
 	const shortTimeLayout string = "2006-01-02"
 	fmt.Println("Expiration Date:", expirationDate.Format(shortTimeLayout))
+	type TransactionType string
+	const (
+		Deposit    TransactionType = "Deposit"
+		Withdrawal TransactionType = "Withdrawal"
+		Transfer   TransactionType = "Transfer"
+	)
+	type transaction struct {
+		date   time.Time
+		amount float32
+		kind   TransactionType
+	}
+	var newTransaction transaction = transaction{
+		date:   time.Now(),
+		amount: 0.01,
+		kind:   Deposit,
+	}
+	fmt.Println("New Transaction:", newTransaction)
+	var transactions []transaction
+	transactions = append(transactions, newTransaction)
+	fmt.Println("Transactions:", transactions)
 }
