@@ -13,7 +13,7 @@ func InitializeWallet() {
 	fmt.Println("Balance:", walletBalance)
 	type CurrencyType string
 	const (
-		BitCoin CurrencyType = "BitCoin"
+		Bitcoin CurrencyType = "Bitcoin"
 		Ether   CurrencyType = "Ether"
 		USD     CurrencyType = "USD"
 		Euro    CurrencyType = "Euro"
@@ -40,14 +40,14 @@ func InitializeWallet() {
 		Transfer   TransactionType = "Transfer"
 	)
 	type transaction struct {
-		date   time.Time
-		amount float32
-		kind   TransactionType
+		date            time.Time
+		amount          float32
+		transactionType TransactionType
 	}
 	var newTransaction transaction = transaction{
-		date:   time.Now(),
-		amount: 0.01,
-		kind:   Deposit,
+		date:            time.Now(),
+		amount:          0.01,
+		transactionType: Deposit,
 	}
 	fmt.Println("New Transaction:", newTransaction)
 	var transactions []transaction
