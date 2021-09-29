@@ -5,11 +5,19 @@ import (
 	"time"
 )
 
-func InitializeWallet() {
+type wallet struct {
+	holder                   string
+	balance                  float32
+	iaActive                 bool
+	minimumTransactionAmount float32
+	numberOfTransactions     uint
+}
+
+func InitializeWallet() wallet {
 	fmt.Println("💰 My wallet")
 	var walletHolder string = "Alberto Basalo"
 	fmt.Println("Holder: " + walletHolder)
-	var walletBalance int = 0
+	var walletBalance float32 = 0
 	fmt.Println("Balance:", walletBalance)
 	type CurrencyType string
 	const (
@@ -53,4 +61,13 @@ func InitializeWallet() {
 	var transactions []transaction
 	transactions = append(transactions, newTransaction)
 	fmt.Println("Transactions:", transactions)
+
+	var myWallet wallet = wallet{
+		holder:                   walletHolder,
+		balance:                  walletBalance,
+		iaActive:                 isActive,
+		minimumTransactionAmount: minimumTransactionAmount,
+		numberOfTransactions:     numberOfTransactions,
+	}
+	return myWallet
 }

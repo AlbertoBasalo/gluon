@@ -48,7 +48,7 @@ func GetStartLine(program string) string {
 ### Build and run
 
 ```bash
-go run gluon.go # builds and runs on memory
+go run gluon.go # builds and runs on tmp folder
 go build gluon.go # generates an executable
 gluon.exe # you can run it anyware
 ```
@@ -105,7 +105,7 @@ func AssertEqual(t testing.TB, actual, expected string) {
 ### Run tests
 
 ```bash
-go run test # builds and runs on memory
+go test # builds and runs tests
 ```
 
 ### [Back to index](https://github.com/AtomicBuilders/gluon/blob/main/docs/0-hello-world.md)
