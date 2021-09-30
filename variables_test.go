@@ -12,11 +12,11 @@ func TestInitializeWallet(t *testing.T) {
 		actual := InitializeWallet()
 		// assert
 		expected := wallet{
-			holder:                   "Alberto Basalo",
-			balance:                  0,
-			iaActive:                 true,
-			minimumTransactionAmount: 0.01,
-			numberOfTransactions:     0,
+			holder:               "Alberto Basalo",
+			balance:              0,
+			iaActive:             true,
+			minimumTransaction:   0.01,
+			numberOfTransactions: 0,
 		}
 		AssertEqual(t, fmt.Sprintf("%#v", &actual), fmt.Sprintf("%#v", &expected))
 	})
