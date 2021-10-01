@@ -38,7 +38,7 @@ func InitializeWallet() Wallet {
 	fmt.Println("Minimum Transaction:", minimumTransaction)
 	var isActive bool = true
 	fmt.Println("Is Active:", isActive)
-	// date and time came on thir own package
+	// date and time came on their own package
 	var creationDate time.Time = time.Now()
 	// formating a date string is intimidating the first time
 	const longTimeLayout string = "2006-01-02 15:04:05"
@@ -53,7 +53,6 @@ func InitializeWallet() Wallet {
 		Withdrawal TransactionType = "Withdrawal"
 		Transfer   TransactionType = "Transfer"
 	)
-	// private types can go lowercase
 	type Transaction struct {
 		date            time.Time
 		amount          float32
@@ -65,10 +64,10 @@ func InitializeWallet() Wallet {
 		transactionType: Deposit, // last comma is mandatory
 	}
 	fmt.Println("New Transaction:", newTransaction)
+	// Arrays
 	var transactions []Transaction
 	transactions = append(transactions, newTransaction)
 	fmt.Println("Transactions:", transactions)
-
 	var myWallet Wallet = Wallet{
 		holder:               walletHolder,
 		balance:              walletBalance,
