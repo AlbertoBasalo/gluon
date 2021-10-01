@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"time"
-)
+) // several imports in one line
 
-type wallet struct {
+// structs for complex types
+type Wallet struct {
 	holder               string
 	balance              float32
 	iaActive             bool
@@ -13,12 +14,15 @@ type wallet struct {
 	numberOfTransactions uint
 }
 
-func InitializeWallet() wallet {
+func InitializeWallet() Wallet {
 	fmt.Println("💰 My wallet")
+	// standard way to declare, set type and assign value to a variable
 	var walletHolder string = "Alberto Basalo"
 	fmt.Println("Holder: " + walletHolder)
+	// attention for different kinds of numbers
 	var walletBalance float32 = 0
 	fmt.Println("Balance:", walletBalance)
+	// A kind of string enum
 	type CurrencyType string
 	const (
 		Bitcoin CurrencyType = "Bitcoin"
@@ -34,7 +38,9 @@ func InitializeWallet() wallet {
 	fmt.Println("Minimum Transaction:", minimumTransaction)
 	var isActive bool = true
 	fmt.Println("Is Active:", isActive)
+	// date and time came on thir own package
 	var creationDate time.Time = time.Now()
+	// formating a date string is intimidating the first time
 	const longTimeLayout string = "2006-01-02 15:04:05"
 	fmt.Println("Creation Date:", creationDate.Format(longTimeLayout))
 	const oneYear time.Duration = time.Hour * 24 * 365
@@ -47,22 +53,23 @@ func InitializeWallet() wallet {
 		Withdrawal TransactionType = "Withdrawal"
 		Transfer   TransactionType = "Transfer"
 	)
-	type transaction struct {
+	// private types can go lowercase
+	type Transaction struct {
 		date            time.Time
 		amount          float32
 		transactionType TransactionType
 	}
-	var newTransaction transaction = transaction{
+	var newTransaction Transaction = Transaction{
 		date:            time.Now(),
 		amount:          0.01,
-		transactionType: Deposit,
+		transactionType: Deposit, // last comma is mandatory
 	}
 	fmt.Println("New Transaction:", newTransaction)
-	var transactions []transaction
+	var transactions []Transaction
 	transactions = append(transactions, newTransaction)
 	fmt.Println("Transactions:", transactions)
 
-	var myWallet wallet = wallet{
+	var myWallet Wallet = Wallet{
 		holder:               walletHolder,
 		balance:              walletBalance,
 		iaActive:             isActive,

@@ -108,4 +108,4 @@ func AssertEqual(t testing.TB, actual, expected string) {
 go test # builds and runs tests
 ```
 
-### [Back to index](https://github.com/AtomicBuilders/gluon/blob/main/docs/0-hello-world.md)
+### [Back to index](https://github.com/AtomicBuilders/gluon/blob/main/docs/index.md)
