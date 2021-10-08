@@ -5,6 +5,16 @@ import (
 	"time"
 ) // several imports in one line
 
+// A kind of string enum
+type CurrencyType string
+
+const (
+	Bitcoin CurrencyType = "Bitcoin"
+	Ether   CurrencyType = "Ether"
+	USD     CurrencyType = "USD"
+	Euro    CurrencyType = "Euro"
+)
+
 // structs for complex types
 type Wallet struct {
 	holder               string
@@ -12,6 +22,20 @@ type Wallet struct {
 	iaActive             bool
 	minimumTransaction   float32
 	numberOfTransactions uint
+}
+
+type TransactionType string
+
+const (
+	Deposit    TransactionType = "Deposit"
+	Withdrawal TransactionType = "Withdrawal"
+	Transfer   TransactionType = "Transfer"
+)
+
+type Transaction struct {
+	date            time.Time
+	amount          float32
+	transactionType TransactionType
 }
 
 func InitializeWallet() Wallet {
@@ -22,14 +46,6 @@ func InitializeWallet() Wallet {
 	// attention for different kinds of numbers
 	var walletBalance float32 = 0
 	fmt.Println("Balance:", walletBalance)
-	// A kind of string enum
-	type CurrencyType string
-	const (
-		Bitcoin CurrencyType = "Bitcoin"
-		Ether   CurrencyType = "Ether"
-		USD     CurrencyType = "USD"
-		Euro    CurrencyType = "Euro"
-	)
 	var walletCurrency CurrencyType = Ether
 	fmt.Println("Currency:", walletCurrency)
 	var numberOfTransactions uint = 0
@@ -47,17 +63,6 @@ func InitializeWallet() Wallet {
 	var expirationDate time.Time = creationDate.Add(oneYear * 2)
 	const shortTimeLayout string = "2006-01-02"
 	fmt.Println("Expiration Date:", expirationDate.Format(shortTimeLayout))
-	type TransactionType string
-	const (
-		Deposit    TransactionType = "Deposit"
-		Withdrawal TransactionType = "Withdrawal"
-		Transfer   TransactionType = "Transfer"
-	)
-	type Transaction struct {
-		date            time.Time
-		amount          float32
-		transactionType TransactionType
-	}
 	var newTransaction Transaction = Transaction{
 		date:            time.Now(),
 		amount:          0.01,
