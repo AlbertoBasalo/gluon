@@ -23,12 +23,13 @@ func ProcessTransactions(transactions []Transaction) {
 func CalculateBalance(transactions []Transaction) float32 {
 	var balance float32 = 0
 	for _, transaction := range transactions {
-		// declares and initializes two variables,
+		// sends a copy of the value of variable balance
+		// declares and initializes two variables with the function results
 		if newBalance, err := getNewBalance(balance, transaction); err != nil {
-			// also checks if there is an error
+			// the statement also checks if there is an error
 			fmt.Println("💥 Not processed:", err)
 		} else {
-			// balance is not mutated inside the function
+			// but balance is not mutated inside the function
 			println("current balance:", balance)
 			println("new balance:", newBalance)
 			balance = newBalance
@@ -44,7 +45,8 @@ func getNewBalance(current float32, transaction Transaction) (float32, error) {
 		// return values on guard failure
 		return current, fmt.Errorf("Transaction amount %v cannot be negative", transaction.amount)
 	}
-	// cahnges to local copy of current
+	// changes to local variable named current
+	// initialized with a copy of the caller value
 	switch transaction.transactionType {
 	case Deposit:
 		current += transaction.amount
