@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func TestCalculateBalance(t *testing.T) {
+func TestControlCalculateBalance(t *testing.T) {
 	t.Run("it should calculate the balance", func(t *testing.T) {
 		// arrange
 		var transactions []Transaction
