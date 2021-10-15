@@ -28,27 +28,31 @@ func CalculateBalance(transactions []Transaction) float32 {
 			// also checks if there is an error
 			fmt.Println("💥 Not processed:", err)
 		} else {
+			// balance is not mutated inside the function
+			println("current balance:", balance)
+			println("new balance:", newBalance)
 			balance = newBalance
 		}
 	}
 	return balance
 }
 
+// current is a value not a pointer (no effect on the original value)
 // function with multiple return values
 func getNewBalance(current float32, transaction Transaction) (float32, error) {
 	if transaction.amount < 0 {
 		// return values on guard failure
 		return current, fmt.Errorf("Transaction amount %v cannot be negative", transaction.amount)
 	}
-	var newBalance float32 = 0.0
+	// cahnges to local copy of current
 	switch transaction.transactionType {
 	case Deposit:
-		newBalance = current + transaction.amount
+		current += transaction.amount
 	case Withdrawal:
 		fallthrough
 	case Transfer:
-		newBalance = current - transaction.amount
+		current -= transaction.amount
 	}
 	// return values on happy path
-	return newBalance, nil
+	return current, nil
 }
