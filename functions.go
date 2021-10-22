@@ -42,7 +42,7 @@ func CalculateBalance(transactions []Transaction) float32 {
 // function with multiple return values
 func getNewBalance(current float32, transaction Transaction) (float32, error) {
 	if transaction.amount < 0 {
-		// return values on guard failure
+		// return errors on guard failure
 		return current, fmt.Errorf("Transaction amount %v cannot be negative", transaction.amount)
 	}
 	// changes to local variable named current
